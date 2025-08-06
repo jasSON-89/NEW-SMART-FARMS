@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Smart Farms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #145a32;
+      background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="%23f5f5dc" offset="0%"/><stop stop-color="%23145a32" offset="100%"/></linearGradient></defs><path d="M0,100 Q200,200 400,100 T800,100 V600 H0 Z" fill="url(%23g)"/></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      color: #145a32;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    h3 {
+      font-size: 1.4em;
+    }
+    p, a, span, li, label, input, button, .section-text {
+      font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+      font-size: 1.15em;
+      color: #145a32;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+    nav a {
+      font-size: 1.15em;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    .section-text {
+      font-size: 1.18em;
+      font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+    }
+    footer {
+      font-size: 1.1em;
+      font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+    }
+    .nsf-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2em;
+      background: rgba(20,90,50,0.97);
+      color: #f5f5dc;
+      padding: 1.5em 2em 1.2em 2em;
+      border-radius: 0 0 24px 24px;
+      margin-bottom: 2em;
+      box-shadow: 0 4px 24px rgba(20,90,50,0.12);
+    }
+    .nsf-logo {
+      height: 56px;
+      width: 56px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 12px;
+      padding: 6px;
+      box-shadow: 0 2px 8px rgba(20,90,50,0.10);
+    }
+    .nsf-header h1 {
+      margin: 0;
+      font-size: 2.1em;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(20,90,50,0.10);
+      color: #f5f5dc;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #333;
+      flex-wrap: wrap;
+      padding: 0.7em 0;
+      box-shadow: 0 2px 8px rgba(20,90,50,0.08);
+    }
+    nav a {
+      color: #f5f5dc;
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: #4CAF50;
+      color: #fff;
+    }
+    main {
+      padding: 0;
+    }
+    /* Sectioned Pages */
+    .page-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      box-sizing: border-box;
+      padding: 0;
+      transition: background 0.6s;
+      scroll-snap-align: start;
+    }
+    .section-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 90vw;
+      max-width: 1200px;
+      gap: 2.5em;
+      box-sizing: border-box;
+    }
+    .left-text .section-text { order: 1; }
+    .left-text .section-image { order: 2; }
+    .right-text .section-image { order: 1; }
+    .right-text .section-text { order: 2; }
+    .section-text {
+      flex: 1 1 50%;
+      padding: 2.5em 2em;
+      color: #145a32;
+      background: rgba(245,245,220,0.82);
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(20,90,50,0.08);
+      font-size: 1.15em;
+      line-height: 1.7;
+      font-weight: 500;
+      min-width: 260px;
+    }
+    .section-text h2 {
+      margin-top: 0;
+      font-size: 2em;
+      color: #145a32;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .section-image {
+      flex: 1 1 55%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 280px;
+      padding: 2em 0;
+    }
+    .section-image img {
+      width: 90%;
+      max-width: 600px;
+      min-width: 260px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 8px 40px rgba(20,90,50,0.22), 0 2px 16px rgba(245,245,220,0.18);
+      border: 6px solid #fffbe6;
+      background: #fff;
+      transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .section-image img:hover {
+      transform: scale(1.04) rotate(-1deg);
+      box-shadow: 0 16px 64px rgba(20,90,50,0.28), 0 4px 24px rgba(245,245,220,0.22);
+      border-color: #43a047;
+    }
+    .mesh1 {
+      background: linear-gradient(135deg, #f5f5dc 60%, #145a32 100%);
+    }
+    .mesh2 {
+      background: linear-gradient(120deg, #145a32 60%, #43a047 100%);
+    }
+    .mesh3 {
+      background: linear-gradient(135deg, #f5f5dc 60%, #43a047 100%);
+    }
+    .mesh4 {
+      background: linear-gradient(120deg, #000000 60%, #145a32 100%);
+    }
+    .mesh5 {
+      background: linear-gradient(135deg, #f5f5dc 60%, #145a32 100%);
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+      background: #fff;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 2.5em;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: color 0.2s;
+    }
+    .close:hover {
+      color: #4CAF50;
+    }
+    /* Footer */
+    footer {
+      background: #145a32;
+      color: #f5f5dc;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      font-size: 1.08em;
+      font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1px;
+      border-radius: 24px 24px 0 0;
+      margin-top: 2em;
+      box-shadow: 0 -2px 16px rgba(20,90,50,0.10);
+    }
+    footer a {
+      color: #f5f5dc;
+      text-decoration: underline;
+      margin: 0 0.3em;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #4CAF50;
+    }
+    /* Scroll snap for smooth paging */
+    html, body {
+      scroll-behavior: smooth;
+    }
+    main {
+      scroll-snap-type: y mandatory;
+    }
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .section-content {
+        max-width: 98vw;
+        gap: 1.2em;
+      }
+      .section-image img {
+        max-width: 320px;
+      }
+    }
+    @media (max-width: 900px) {
+      .section-content {
+        flex-direction: column;
+        gap: 1.2em;
+      }
+      .section-text, .section-image {
+        width: 100%;
+        max-width: 100%;
+        padding: 1em;
+      }
+      .section-image img {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 700px) {
+      .modal-content {
+        max-width: 98vw;
+        max-height: 60vh;
+      }
+      .nsf-header {
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 1em;
+        text-align: center;
+      }
+      .nsf-logo {
+        height: 40px;
+        width: 40px;
+      }
+      .nsf-header h1 {
+        font-size: 1.1em;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      main {
+        padding: 0;
+      }
+      footer {
+        font-size: 1em;
+        padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .section-text {
+        font-size: 1em;
+        padding: 1em 0.5em;
+      }
+      .nsf-header h1 {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nsf-header">
+    <img src="images NSF/logo.png.png" alt="New Smart Farms Logo" class="nsf-logo">
+    <h1>WELCOME TO NEW SMART FARMS</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <section class="page-section mesh1">
+      <div class="section-content left-text">
+        <div class="section-text">
+          <h2>WE OFFER HIGH QUALITY</h2>
+          <p>
+            At New Smart Farms, we're redefining agriculture with innovation, quality, and scale. As a nationwide supplier of premium peppers, we combine advanced farming technology with sustainable practices to deliver freshness you can trust, harvested with care, shipped with precision, and enjoyed across the country.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="images NSF/IMG_5578.jpg" alt="High Quality" onclick="openModal(this)" />
+        </div>
+      </div>
+    </section>
+    <section class="page-section mesh2">
+      <div class="section-content right-text">
+        <div class="section-image">
+          <img src="images NSF/double red bell pepper.jpg" alt="Variety" onclick="openModal(this)" />
+        </div>
+        <div class="section-text">
+          <h2>WE OFFER VARIETY</h2>
+          <p>
+            Explore our wide range of pepper varieties, each cultivated to perfection. Our commitment to diversity ensures you get the best selection for your needs, whether for home, business, or export.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="page-section mesh3">
+      <div class="section-content left-text">
+        <div class="section-text">
+          <h2>WE ARE RELIABLE</h2>
+          <p>
+            Reliability is at the core of our operations. From timely planting to prompt delivery, we ensure our customers always receive the freshest produce, exactly when they need it.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="images NSF/PHOTO-2025-08-05-12-22-09.jpg"Reliable" onclick="openModal(this)" />
+        </div>
+      </div>
+    </section>
+    <section class="page-section mesh4">
+      <div class="section-content right-text">
+        <div class="section-image">
+          <img src="images NSF/IMG_5580.jpg" alt="Serve" onclick="openModal(this)" />
+        </div>
+        <div class="section-text">
+          <h2>WE PRODUCE TO SERVE</h2>
+          <p>
+            Our mission is to serve communities with nutritious, sustainably grown peppers. We believe in giving back and supporting local economies through responsible farming.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="page-section mesh5">
+      <div class="section-content left-text">
+        <div class="section-text">
+          <h2>WE ARE NEW SMART FARMS</h2>
+          <p>
+            Join us as we shape the future of agriculture. Experience the difference with New Smart Farms—where quality, variety, and reliability meet innovation.
+          </p>
+        </div>
+        <div class="section-image">
+          <img src="images NSF/WE ARE NEW SMART FARMS.jpg" alt="New Smart Farms" onclick="openModal(this)" />
+        </div>
+      </div>
+    </section>
+    <!-- Modal for full-size image -->
+    <div id="imgModal" class="modal" onclick="closeModal()">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImg">
+    </div>
+  </main>
+  <footer>
+    <div style="margin-bottom: 0.5em;">
+      <strong>Contact:</strong>
+      <a href="mailto:newsmartfarms@gmail.com">newsmartfarms@gmail.com</a> |
+      <span>+234 (0) 8052874004</span> |
+      <a href="contact.html">Contact Page</a>
+    </div>
+    <div>
+      &copy; 2025 New Smart Farms. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    // Modal functionality for full-size images
+    function openModal(img) {
+      var modal = document.getElementById("imgModal");
+      var modalImg = document.getElementById("modalImg");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+    // Optional: Close modal with ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+</body>
+</html>
