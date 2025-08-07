@@ -1,0 +1,104 @@
+/* Base */
+body {
+  background: linear-gradient(135deg, #f5f5dc 60%, #145a32 100%);
+  color: #145a32;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Header */
+.nsf-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  background: #145a32;
+  color: #f5f5dc;
+  padding: 1em 2em;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+}
+.nsf-logo {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px;
+}
+.nsf-header h1 {
+  margin: 0;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+/* Contact Card */
+.cascade-bg {
+  background: #f5f5dc;
+  color: #145a32;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(20,90,50,0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.cascade-bg h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.cascade-bg p {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+.cascade-bg a {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.7em 1.4em;
+  background: #145a32;
+  color: #f5f5dc;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.cascade-bg a:hover {
+  background: #f5f5dc;
+  color: #145a32;
+  border: 1px solid #145a32;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nsf-header {
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em;
+    text-align: center;
+  }
+  .nsf-logo {
+    height: 40px;
+    width: 40px;
+  }
+  .nsf-header h1 {
+    font-size: 1.2em;
+  }
+
+  .cascade-bg {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .cascade-bg p {
+    font-size: 1em;
+  }
+
+  .cascade-bg h1 {
+    font-size: 1.5em;
+  }
+}
