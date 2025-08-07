@@ -286,6 +286,9 @@ footer a:hover {
     flex-direction: column;
     gap: 0.5em;
     padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
   }
   .nsf-logo {
@@ -296,7 +299,7 @@ footer a:hover {
     font-size: 1.1em;
   }
   nav {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   #navToggle {
