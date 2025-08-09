@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('About page loaded – Welcome to New Smart Farms!');
-  
-  // Simple animation effect
+
+  // Navbar mobile toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Fade-in animation for sections
   const sections = document.querySelectorAll('section');
   sections.forEach(section => {
     section.style.opacity = 0;
