@@ -310,7 +310,7 @@ footer a:hover {
     flex-direction: column;
     width: 100%;
   }
-  nav.active {
+  nav.show {
     display: flex;
   }
 }

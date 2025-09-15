@@ -15,7 +15,16 @@ document.addEventListener("keydown", function (e) {
 });
 
 // Responsive navbar toggle
-document.getElementById("navToggle").addEventListener("click", function () {
-  const navbar = document.getElementById("navbar");
-  navbar.classList.toggle("active");
+const navToggle = document.getElementById("navToggle");
+const navbar = document.getElementById("navbar");
+
+navToggle.addEventListener("click", () => {
+  navbar.classList.toggle("show"); // <-- matches CSS now
+});
+
+// Optional: close nav when a link is clicked
+navbar.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("show");
+  });
 });
