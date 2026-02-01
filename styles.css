@@ -58,6 +58,13 @@ p, a, span, li, label, input, button, .section-text {
   box-shadow: 0 2px 8px rgba(20,90,50,0.10);
 }
 
+.nsf-header h2 {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  margin: 0;
+  z-index: 2;
+}
+
 /* Navigation */
 /* nav {
   display: flex;
